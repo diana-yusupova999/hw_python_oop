@@ -1,7 +1,6 @@
 from typing import Dict, Any
-from dataclasses import dataclass
 
-@dataclass()
+
 class InfoMessage:
     """Информационное сообщение о тренировке."""
     def __init__(self,

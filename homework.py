@@ -29,8 +29,7 @@ class Training:
     def __init__(self,
                  action: int,
                  duration: float,
-                 weight: float,
-                 ) -> None:
+                 weight: float) -> None:
         self.action = action
         self.duration = duration
         self.weight = weight
@@ -78,11 +77,10 @@ class SportsWalking(Training):
     MULTIPLIER_WEIGHT_SPEED: float = 0.029
 
     def __init__(self,
-                 action,
-                 duration,
-                 weight,
-                 height: float
-                 ) -> None:
+                 action: int,
+                 duration: float,
+                 weight: float,
+                 height: float) -> None:
         super().__init__(action, duration, weight)
         self.height = height
 
@@ -100,12 +98,11 @@ class Swimming(Training):
     MULTIPLIER_WEIGHT: int = 2
 
     def __init__(self,
-                 action,
-                 duration,
-                 weight,
+                 action: int,
+                 duration: float,
+                 weight: float,
                  length_pool: float,
-                 count_pool: int,
-                 ) -> None:
+                 count_pool: int) -> None:
         super().__init__(action, duration, weight)
         self.count_pool = count_pool
         self.length_pool = length_pool
@@ -133,7 +130,7 @@ def read_package(workout_type: str, data: list) -> Training:
 
 def main(train: Training) -> None:
     """Главная функция."""
-    info = train.show_training_info()
+    info: InfoMessage = train.show_training_info()
     print(info.get_message())
 
 
